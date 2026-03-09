@@ -5,7 +5,11 @@ module dff (
   output logic q
 );
 
-// Internal logic
+always @(posedge clk) begin
+  if(rst)
+    q <= 0;
+  else
+    q <= d;
+end
 
 endmodule
-
